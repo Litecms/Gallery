@@ -2,9 +2,9 @@ This is a Laravel 5 package that provides gallery management facility for lavali
 
 ## Installation
 
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `lavalite/gallery`.
+Begin by installing this package through Composer. Edit your project's `composer.json` file to require `litecms/gallery`.
 
-    "lavalite/gallery": "dev-master"
+    "litecms/gallery": "dev-master"
 
 Next, update Composer from the Terminal:
 
