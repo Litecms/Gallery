@@ -1,4 +1,4 @@
-This is a Laravel 5 package that provides gallery management facility for lavalite framework.
+This is a litecms 5 package that provides gallery management facility for lavalite framework.
 
 ## Installation
 
@@ -34,17 +34,18 @@ Configuration
 
     php artisan vendor:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --tag="config"
 
-Language
+Language files
 
     php artisan vendor:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --tag="lang"
 
-Views public and admin
+Views files
 
-    php artisan vendor:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --tag="view-public"
-    php artisan vendor:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --tag="view-admin"
+    php artisan vendor:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --tag="views"
+    
 
-Publish admin views only if it is necessary.
 
-## Usage
+Public folders
+
+    php artisan vendor:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --tag="public"
 
 

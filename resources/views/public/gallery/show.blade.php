@@ -16,22 +16,42 @@
             <div class="col-md-12">
                 <div class="grid">
                     <div id="js-grid-masonry" class="cbp">
-                    @if(!empty(@$gallery['images']))
-                        @forelse($gallery['images'] as $key => $file)
+
+                        @foreach($gallery->getImages('ge','images') as $key => $image)
                         <div class="cbp-item img_box">
+                        @if(!empty($gallery['images']))
                             <?php
+                                $file = $gallery['images'][$key];
+
                                 $info = pathinfo($file['file']);
-                                $ext  = strtolower($info['extension']);
+                                $ext = strtolower($info['extension']);
                             ?>
-                            @if (in_array($ext, ['jpg','jpeg', 'png', 'gif']) )
-                            <a href="{!! URL::to('/file/'.$file['efolder'])!!}/{!!$file['file']!!}" class="cbp-caption cbp-lightbox" data-title="{!! @$file['caption'] !!}">
+
+
+                                @if (in_array(@$ext, ['jpg','jpeg', 'png', 'gif']) )
+                                <a href="{!! URL::to($image)!!}" class="cbp-caption cbp-lightbox" data-title="{!! @$file['caption'] !!}">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="{!! URL::to($image)!!}" class="img-thumbnail image-responsive">
+                                    </div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <div class="cbp-l-caption-title">{!! @$file['caption'] !!}</div>
+                                                <!-- <div class="cbp-l-caption-desc">&nbsp;</div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                 @endif
+                            @else
+                            <a href="{!! URL::to($image)!!}" class="cbp-caption cbp-lightbox" data-title="No Images">
                                 <div class="cbp-caption-defaultWrap">
-                                    <img src="{!! URL::to('/image/ge/'.$file['efolder'])!!}/{!! $file['file'] !!}" class="img-thumbnail image-responsive">
+                                    <img src="{!! URL::to($image)!!}" class="img-thumbnail image-responsive">
                                 </div>
                                 <div class="cbp-caption-activeWrap">
                                     <div class="cbp-l-caption-alignCenter">
                                         <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title">{!! @$file['caption'] !!}</div>
+                                            <div class="cbp-l-caption-title">No Images</div>
                                             <!-- <div class="cbp-l-caption-desc">&nbsp;</div> -->
                                         </div>
                                     </div>
@@ -39,10 +59,8 @@
                             </a>
                             @endif
                         </div>
-                        @empty
-                        Upload file(s).
-                        @endif
-                    @endif
+                        @endforeach
+
                     </div>
                 </div>
             </div>

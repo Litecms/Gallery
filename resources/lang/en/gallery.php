@@ -6,7 +6,11 @@ return [
      * Singlular and plural name of the module
      */
     'name'        => 'Gallery',
-    'names'       => 'Gallerys',
+    'names'       => 'Galleries',
+    'user_name'   => 'My <span>Gallery</span>',
+    'user_names'  => 'My <span>Galleries</span>',
+    'create'      => 'Create My Gallery',
+    'edit'        => 'Update My Gallery',
 
     /**
      * Options for select/radio/check.

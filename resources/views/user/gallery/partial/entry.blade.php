@@ -1,4 +1,5 @@
 <div class='col-md-4 col-sm-6'>
+  {!! Form::hidden('upload_folder')!!}
                        {!! Form::text('title')
                        -> label(trans('gallery::gallery.label.title'))
                        -> placeholder(trans('gallery::gallery.placeholder.title'))!!}

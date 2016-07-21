@@ -32,20 +32,20 @@
                 <div class="tab-pane active" id="details">
                     @include('gallery::admin.gallery.partial.entry')
                     <div class='col-md-6 col-sm-6'>
-                @if(!empty($gallery['image']))
+               
                <label>Image</label><br>
-                    <img src="{!!trans_url('image/sm/'.@$gallery['image']['efolder'])!!}/{!!@$gallery['image']['file']!!}">
-                    @endif
+                    <img src="{!!url($gallery->defaultImage('sm','image'))!!}">
+                    
                 </div>
                 </div>
                      <div class="tab-pane" id="detail">
                     <div class='col-md-6 col-sm-6'>
-                    @if(!empty($gallery['images']))
+                    
                      <label>Images</label><br>
-                          @foreach($gallery['images'] as $value)
-                            <img src="{!!trans_url('image/sm/'.@$value['efolder'])!!}/{!!@$value['file']!!}">
-                          @endforeach
-                     @endif
+                          @forelse($gallery->getImages('sm', 'images') as $image)
+                    <img src="{!!url(@$image)!!}"> &nbsp;&nbsp;
+                     @empty
+                @endif
                     </div>
                 </div>
             </div>

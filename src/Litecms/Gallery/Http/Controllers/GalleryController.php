@@ -29,11 +29,14 @@ class GalleryController extends PublicController
      */
     protected function index()
     {
+        $this->theme->asset()->add('cube-portfolio.css', 'packages/cube-portfolio/cubeportfolio.min.css');
+        $this->theme->asset()->container('footer')->add('cube-portfolio.js', 'packages/cube-portfolio/jquery.cubeportfolio.min.js');
+
         $galleries = $this->repository
-        ->pushCriteria(new \Litecms\Gallery\Repositories\Criteria\GalleryPublicCriteria())
-        ->scopeQuery(function ($query) {
-            return $query->orderBy('id', 'DESC');
-        })->paginate();
+            ->pushCriteria(new \Litecms\Gallery\Repositories\Criteria\GalleryPublicCriteria())
+            ->scopeQuery(function ($query) {
+                return $query->orderBy('id', 'DESC');
+            })->paginate();
 
         return $this->theme->of('gallery::public.gallery.index', compact('galleries'))->render();
     }
@@ -47,6 +50,9 @@ class GalleryController extends PublicController
      */
     protected function show($slug)
     {
+        $this->theme->asset()->add('cube-portfolio.css', 'packages/cube-portfolio/cubeportfolio.min.css');
+        $this->theme->asset()->container('footer')->add('cube-portfolio.js', 'packages/cube-portfolio/jquery.cubeportfolio.min.js');
+
         $gallery = $this->repository->scopeQuery(function ($query) use ($slug) {
             return $query->orderBy('id', 'DESC')
                 ->where('slug', $slug);

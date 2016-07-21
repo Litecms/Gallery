@@ -27,4 +27,5 @@
                     <button class="btn btn-sm btn-danger waves-effect waves-float text-uppercase">Create Gallery</button>
                 </div>
             </div>
+              {!! Form::hidden('upload_folder')!!}
     {!! Form::close() !!}

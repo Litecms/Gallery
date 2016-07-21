@@ -42,10 +42,14 @@ class GalleryUserController extends BaseController
      */
     public function index(GalleryUserRequest $request)
     {
-        $this->repository->pushCriteria(new \Litecms\Gallery\Repositories\Criteria\GalleryUserCriteria());
-        $galleries = $this->repository->scopeQuery(function ($query) {
-            return $query->orderBy('id', 'DESC');
-        })->paginate();
+        $this->theme->asset()->add('cube-portfolio.css', 'packages/cube-portfolio/cubeportfolio.min.css');
+        $this->theme->asset()->container('footer')->add('cube-portfolio.js', 'packages/cube-portfolio/jquery.cubeportfolio.min.js');
+
+        $galleries = $this->repository
+            ->pushCriteria(new \Litecms\Gallery\Repositories\Criteria\GalleryUserCriteria())
+            ->scopeQuery(function ($query) {
+                return $query->orderBy('id', 'DESC');
+            })->paginate();
 
         $gallery = $this->repository->newInstance([]);
         Form::populate($gallery);
@@ -119,6 +123,8 @@ class GalleryUserController extends BaseController
      */
     public function edit(GalleryUserRequest $request, Gallery $gallery)
     {
+        $this->theme->asset()->add('cube-portfolio.css', 'packages/cube-portfolio/cubeportfolio.min.css');
+        $this->theme->asset()->container('footer')->add('cube-portfolio.js', 'packages/cube-portfolio/jquery.cubeportfolio.min.js');
 
         Form::populate($gallery);
 

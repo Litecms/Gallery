@@ -21,20 +21,18 @@
             </div>
         </div>
         <div class="row m-t-20">
-                @foreach($galleries as $galleries)
+                @foreach($galleries as $gallery)
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="my-album-wraper">
-                        <a class="my-album-inner" href="{{trans_url('galleries')}}/{{@$galleries['slug']}}">
+                        <a class="my-album-inner" href="{{trans_url('galleries')}}/{{@$gallery['slug']}}">
                             <div class="my-gallery-image">
-                                @if(!empty($galleries['image']))
-                                    <img alt="" class="img-responsive" src="{!!trans_url('/image/ge/'.$galleries['image']['efolder'].'/'.$galleries['image']['file'])!!}">
-                                @else
-                                    <img class="img-responsive" src="{!!trans_url('img/380x360/104.jpg')!!}">
-                                @endif
+
+                                    <img alt="" class="img-responsive" src="{!!url($gallery->defaultImage('ge','image'))!!}">
+
                             </div>
                             <div class="my-album-title">
                                 <div class="my-album-title-inner">
-                                    {{$galleries->title}}
+                                    {{$gallery->title}}
                                 </div>
                             </div>
                         </a>

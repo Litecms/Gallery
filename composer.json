@@ -1,7 +1,7 @@
 {
     "name": "litecms/gallery",
     "description": "Gallery package for lavalite.",
-    "keywords": ["lavalite", "Gallery"],
+    "keywords": ["litecms", "lavalite" , "Gallery"],
     "license": "MIT",
     "authors": [
         {
