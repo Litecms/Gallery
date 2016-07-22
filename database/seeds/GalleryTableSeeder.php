@@ -8,7 +8,7 @@ class GalleryTableSeeder extends Seeder
     {
         DB::table('galleries')->insert([
 
-            [,
+            [
                 'user_id'       => '1',
                 'title'         => 'Adventure',
                 'slug'          => 'adventure',
