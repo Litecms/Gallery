@@ -21,19 +21,7 @@ class GalleryTableSeeder extends Seeder
                 'updated_at'    => '2016-07-21 12:19:39',
                 'deleted_at'    => null,
             ],
-            [
-                'user_id'       => '1',
-                'title'         => 'Family',
-                'slug'          => 'family',
-                'image'         => '',
-                'images'        => '',
-                'upload_folder' => '',
-                'status'        => 'Show',
-                'published'     => 'Yes',
-                'created_at'    => '2016-07-21 15:02:09',
-                'updated_at'    => '2016-07-20 12:43:40',
-                'deleted_at'    => '2016-07-20 12:43:40',
-            ],
+
             [
                 'user_id'       => '1',
                 'title'         => 'Beach',

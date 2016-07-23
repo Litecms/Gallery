@@ -34,7 +34,7 @@
                     <div class='col-md-6 col-sm-6'>
                
                <label>Image</label><br>
-                    <img src="{!!url($gallery->defaultImage('sm','image'))!!}">
+                    <img src="{!!url($gallery->defaultImage('gallery.sm','image'))!!}">
                     
                 </div>
                 </div>
@@ -42,10 +42,9 @@
                     <div class='col-md-6 col-sm-6'>
                     
                      <label>Images</label><br>
-                          @forelse($gallery->getImages('sm', 'images') as $image)
-                    <img src="{!!url(@$image)!!}"> &nbsp;&nbsp;
-                     @empty
-                @endif
+                          @foreach($gallery->getImages('gallery.sm', 'images') as $image)
+                    <img src="{!!url(@$image)!!}" class="img-responsive">                     
+                    @endforeach
                     </div>
                 </div>
             </div>

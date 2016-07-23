@@ -27,7 +27,7 @@
                         <a class="my-album-inner" href="{{trans_url('galleries')}}/{{@$gallery['slug']}}">
                             <div class="my-gallery-image">
 
-                                    <img alt="" class="img-responsive" src="{!!url($gallery->defaultImage('ge','image'))!!}">
+                                    <img alt="" class="img-responsive" src="{!!url($gallery->defaultImage('gallery.md1','image'))!!}">
 
                             </div>
                             <div class="my-album-title">

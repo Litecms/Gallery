@@ -87,7 +87,7 @@ class GalleryServiceProvider extends ServiceProvider
         // Publish seeds
         $this->publishes([__DIR__ . '/../../../../database/seeds/' => base_path('database/seeds')], 'seeds');
 
-         // Publish public
+        // Publish public
         $this->publishes([__DIR__ . '/../../../../public/' => public_path('/')], 'uploads');
     }
 }

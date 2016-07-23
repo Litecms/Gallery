@@ -13,7 +13,7 @@
                 @if (in_array($ext, ['jpg','jpeg', 'png', 'gif']) )
                     <a class="cbp-caption cbp-lightbox" href="{!! url('/file/'.folder_encode($file['folder']))!!}/{!!$file['file']!!}" target="_blank">
                   <div class="cbp-caption-defaultWrap">
-                      <img src="{!! url('/image/ge/'.folder_encode($file['folder']))!!}/{!! $file['file'] !!}" class="img-thumbnail image-responsive">
+                      <img src="{!! url('/image/gallery.md/'.folder_encode($file['folder']))!!}/{!! $file['file'] !!}" class="img-thumbnail image-responsive">
                   </div>
                   <div class="cbp-caption-activeWrap">
                             <div class="cbp-l-caption-alignCenter">
@@ -53,7 +53,7 @@
                         </div>
                         <div class="modal-body">
                             @if (in_array($ext, ['jpg','jpeg', 'png', 'gif']) )
-                                <a href="{!! url('/file/'.$file['folder'])!!}/{!!$file['file']!!}" target="_blank"><img src="{!! url('/image/md/'.folder_encode($file['folder']))!!}/{!! $file['file'] !!}" class="img-thumbnail image-responsive"></a>
+                                <a href="{!! url('/file/'.$file['folder'])!!}/{!!$file['file']!!}" target="_blank"><img src="{!! url('/image/gallery.md/'.folder_encode($file['folder']))!!}/{!! $file['file'] !!}" class="img-thumbnail image-responsive"></a>
                             @else
                                 <a href="{!! url('/file/'.folder_encode($file['folder']))!!}/{!!$file['file']!!}" target="_blank">{!!$file['file']!!}</a>
                             @endif

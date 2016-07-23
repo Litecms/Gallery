@@ -17,7 +17,7 @@
                 <div class="grid">
                     <div id="js-grid-masonry" class="cbp">
 
-                        @foreach($gallery->getImages('ge','images') as $key => $image)
+                        @foreach($gallery->getImages('gallery.md','images') as $key => $image)
                         <div class="cbp-item img_box">
                         @if(!empty($gallery['images']))
                             <?php

@@ -17,7 +17,7 @@
                     <div class="my-album-wraper">
                         <a href="{{ trans_url('/user/gallery/gallery') }}/{{ $gallery->getRouteKey() }}/edit" class="my-album-inner">
                             <div class="my-gallery-image">
-                            <img src="{!!url(@$gallery->defaultImage('sm','image'))!!}" >
+                            <img src="{!!url(@$gallery->defaultImage('gallery.sm','image'))!!}" >
                             </div>
                             <div class="my-album-title">
                                 <div class="my-album-title-inner">{{$gallery->title}}</div>

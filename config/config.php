@@ -17,6 +17,34 @@ return [
      */
     'modules'  => ['gallery'],
 
+    /*
+     * Image size.
+     */
+    'image'    => [
+
+       'sm' => [
+            'width'     => '160',
+            'height'    => '160',
+            'action'    => 'resize',
+            'watermark' => 'img/logo/default.png',
+        ],
+
+        'md' => [
+            'width'     => '380',
+            'height'    => '570',
+            'action'    => 'resize',
+            'watermark' => 'img/logo/default.png',
+        ],
+        'md1' => [
+            'width'     => '380',
+            'height'    => '380',
+            'action'    => 'fit',
+            'watermark' => 'img/logo/default.png',
+        ],
+
+
+    ],
+
     'gallery'  => [
         'model'         => 'Litecms\Gallery\Models\Gallery',
         'table'         => 'galleries',
