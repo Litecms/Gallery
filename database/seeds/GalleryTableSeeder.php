@@ -106,7 +106,7 @@ class GalleryTableSeeder extends Seeder
                 'description' => null,
                 'icon'        => 'fa fa-camera',
                 'target'      => null,
-                'order'       => 1,
+                'order'       => 170,
                 'status'      => 1,
             ],
 
@@ -118,7 +118,7 @@ class GalleryTableSeeder extends Seeder
                 'description' => null,
                 'icon'        => 'icon-picture',
                 'target'      => null,
-                'order'       => 1,
+                'order'       => 170,
                 'status'      => 1,
             ],
 
@@ -130,7 +130,7 @@ class GalleryTableSeeder extends Seeder
                 'description' => null,
                 'icon'        => null,
                 'target'      => null,
-                'order'       => 1,
+                'order'       => 170,
                 'status'      => 1,
             ],
 
