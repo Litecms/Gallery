@@ -24,16 +24,16 @@
                 @include('gallery::admin.gallery.partial.entry')
                 <div class='col-md-6 col-sm-12'>
                   <label>Image</label>
-                      {!!Filer::uploader('image',@$gallery->getUploadURL('image'),1)!!}
-                      {!! Filer::editor('image', @$gallery['image'],1) !!}
+                      {!!$gallery->fileUpload('image')!!}
+                      {!!$gallery->fileEdit('image')!!}
                 </div>
                 </div>
 
                 <div class="tab-pane" id="detail">
                 <div class='col-md-6 col-sm-6'>
                     <label>Images</label>
-                    {!! Filer::uploader('images', $gallery->getUploadURL('images')) !!}
-                    {!! Filer::editor('images', $gallery['images']) !!}
+                    {!!$gallery->fileUpload('images')!!}
+                    {!!$gallery->fileEdit('images')!!}
                 </div>
                 </div>
 
