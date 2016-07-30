@@ -25,6 +25,7 @@ class CreateGalleryTable extends Migration
             $table->enum('published', ['Yes', 'No'])->default('No')->nullable();
             $table->enum('status', ['show', 'hide'])->default('hide')->nullable();
             $table->integer('user_id')->nullable();
+            $table->string('user_type', 200)->nullable();
             $table->string('upload_folder', 100)->nullable();
             $table->softDeletes();
             $table->nullableTimestamps();

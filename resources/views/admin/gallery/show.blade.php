@@ -32,19 +32,15 @@
                 <div class="tab-pane active" id="details">
                     @include('gallery::admin.gallery.partial.entry')
                     <div class='col-md-6 col-sm-6'>
-               
-               <label>Image</label><br>
-                    <img src="{!!url($gallery->defaultImage('gallery.sm','image'))!!}">
-                    
-                </div>
+                        <label>Image</label><br>
+                        {!!$gallery->fileShow('image')!!}
+                    </div>
                 </div>
                      <div class="tab-pane" id="detail">
                     <div class='col-md-6 col-sm-6'>
                     
                      <label>Images</label><br>
-                          @foreach($gallery->getImages('gallery.sm', 'images') as $image)
-                    <img src="{!!url(@$image)!!}" class="img-responsive">                     
-                    @endforeach
+                        {!!$gallery->fileShow('images')!!}
                     </div>
                 </div>
             </div>

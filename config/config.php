@@ -22,14 +22,14 @@ return [
      */
     'image'    => [
 
-       'sm' => [
+        'sm'  => [
             'width'     => '160',
             'height'    => '160',
             'action'    => 'resize',
             'watermark' => 'img/logo/default.png',
         ],
 
-        'md' => [
+        'md'  => [
             'width'     => '380',
             'height'    => '570',
             'action'    => 'resize',
@@ -41,7 +41,6 @@ return [
             'action'    => 'fit',
             'watermark' => 'img/logo/default.png',
         ],
-
 
     ],
 
@@ -55,9 +54,9 @@ return [
         'slugs'         => ['slug' => 'title'],
         'dates'         => ['deleted_at'],
         'appends'       => [],
-        'fillable'      => ['user_id', 'title', 'image', 'images', 'status','upload_folder'],
+        'fillable'      => ['user_id', 'title', 'image', 'images', 'status', 'upload_folder'],
 
-        'upload-folder' => '/uploads/gallery/gallery',
+        'upload_folder' => '/gallery/gallery',
         'uploads'       => [
             'single'   => ['image'],
             'multiple' => ['images'],

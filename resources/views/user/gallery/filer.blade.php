@@ -4,6 +4,11 @@
     <div class="grid">
       <div id="js-grid-masonry" class="cbp">
         @forelse($files as $key => $file)
+        <?php
+        if (is_object($file)) {
+            $file = (array) $file;
+        }
+        ?>
         <div class="cbp-item img_box" id="img_box_{!!$field!!}_{!!$key!!}" class="img_box col-md-3 col-sm-3 col-xs-6">
             <div class="img_container">
                 <?php
@@ -11,22 +16,21 @@
                     $ext = strtolower($info['extension']);
                 ?>
                 @if (in_array($ext, ['jpg','jpeg', 'png', 'gif']) )
-                    <a class="cbp-caption cbp-lightbox" href="{!! url('/file/'.folder_encode($file['folder']))!!}/{!!$file['file']!!}" target="_blank">
+                  <a class="cbp-caption cbp-lightbox" href="{!! url("/file/{$config}/".folder_encode($file["folder"]))!!}/{!!$file["file"]!!}" target="_blank">
                   <div class="cbp-caption-defaultWrap">
-                      <img src="{!! url('/image/gallery.md/'.folder_encode($file['folder']))!!}/{!! $file['file'] !!}" class="img-thumbnail image-responsive">
+                      <img src="{!! url("/image/{$size}/{$config}/ ". folder_encode($file["folder"]))!!}/{!! $file["file"] !!}" class="img-thumbnail image-responsive">
                   </div>
                   <div class="cbp-caption-activeWrap">
                             <div class="cbp-l-caption-alignCenter">
                                 <div class="cbp-l-caption-body">
                                     <div class="cbp-l-caption-title">{!! @$file['caption'] !!}</div>
-                                   <!--  <div class="cbp-l-caption-desc">&nbsp;</div> -->
                                 </div>
                             </div>
                     </div>
                 </a>
                 @else
                     <div id="file">
-                        <a href="{!! url('/file/'.folder_encode($file['folder']))!!}/{!!$file['file']!!}" target="_blank">{!!$file['file']!!}</a>
+                        <a href="{!! url("/file/{$config}/".folder_encode($file["folder"]))!!}/{!!$file["file"]!!}" target="_blank">{!!$file['file']!!}</a>
                     </div>
                 @endif
                 <div class="btn_container">
@@ -53,15 +57,14 @@
                         </div>
                         <div class="modal-body">
                             @if (in_array($ext, ['jpg','jpeg', 'png', 'gif']) )
-                                <a href="{!! url('/file/'.$file['folder'])!!}/{!!$file['file']!!}" target="_blank"><img src="{!! url('/image/gallery.md/'.folder_encode($file['folder']))!!}/{!! $file['file'] !!}" class="img-thumbnail image-responsive"></a>
+                              <a href='{!! url("/file/{$config}/".folder_encode($file["folder"]))!!}/{!!$file["file"]!!}' target="_blank"><img src='{!! url("/image/{$size}/{$config}/".folder_encode($file["folder"]))!!}/{!! $file["file"] !!}' class="img-thumbnail image-responsive"></a>
                             @else
-                                <a href="{!! url('/file/'.folder_encode($file['folder']))!!}/{!!$file['file']!!}" target="_blank">{!!$file['file']!!}</a>
+                                <a href="{!! url("/file/{$config}".folder_encode($file["folder"]))!!}/{!!$file["file"]!!}" target="_blank">{!!$file["file"]!!}</a>
                             @endif
                             {!!Form::text($field."[$key][caption]", 'Caption')->value(@$file['caption'])!!}
-                                  {!!Form::hidden($field."[$key][efolder]")->value(@$file['efolder'])->raw()!!}
-                                  {!!Form::hidden($field."[$key][folder]")->value(@$file['folder'])->raw()!!}
-                                  {!!Form::hidden($field."[$key][time]")->value(@$file['time'])->raw()!!}
-                                  {!!Form::hidden($field."[$key][file]")->value(@$file['file'])->raw()!!}
+                            {!!Form::hidden($field."[$key][folder]")->value(@$file["folder"])->raw()!!}
+                            {!!Form::hidden($field."[$key][time]")->value(@$file['time'])->raw()!!}
+                            {!!Form::hidden($field."[$key][file]")->value(@$file["file"])->raw()!!}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Save &amp; Close</button>

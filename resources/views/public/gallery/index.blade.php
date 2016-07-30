@@ -16,7 +16,7 @@
                 </p>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs text-right">
-                <img alt="" src="img/gallery-side-icon.png">
+                <img alt="" src="{!!url('img/gallery-side-icon.png')!!}">
                 </img>
             </div>
         </div>

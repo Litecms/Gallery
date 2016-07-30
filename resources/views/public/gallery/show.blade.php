@@ -22,7 +22,6 @@
                         @if(!empty($gallery['images']))
                             <?php
                                 $file = $gallery['images'][$key];
-
                                 $info = pathinfo($file['file']);
                                 $ext = strtolower($info['extension']);
                             ?>

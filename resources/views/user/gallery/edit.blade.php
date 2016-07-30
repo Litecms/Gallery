@@ -25,30 +25,30 @@
                 ->files('true')
                 ->action(URL::to('user/gallery/gallery') .'/'.$gallery->getRouteKey())!!}
                 <div class="row">
-                        <div class="col-lg-6">
-                             {!! Form::text('title')
-                            -> required()
-                            -> label(trans('gallery::gallery.label.title'))
-                            -> placeholder(trans('gallery::gallery.placeholder.title'))!!}
-                        </div>
-                        <div class="col-lg-6">
-                            <label for="name">Gallery Image</label>
-                        {!!Filer::uploader('image',@$gallery->getUploadURL('image'),1)!!}
-                        {!! Filer::editor('image', @$gallery['image'],1) !!}
-                        </div>
+                    <div class="col-lg-6">
+                         {!! Form::text('title')
+                        -> required()
+                        -> label(trans('gallery::gallery.label.title'))
+                        -> placeholder(trans('gallery::gallery.placeholder.title'))!!}
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="name">Gallery Image</label>
+                    {!!$gallery->fileUpload('image')!!}
+                    {!!$gallery->fileEdit('image')!!}
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 profile-pic">
                         <label for="name">Upload Images</label>
-                        {!! Filer::uploader('images', $gallery->getUploadURL('images')) !!}
+                        {!!$gallery->fileUpload('images')!!}
                     </div>
                 </div>
                 <div class="row m-t-20">
                     <div class="col-md-12">
-                      {!! Filer::editor('images', @$gallery['images'],20,'gallery::user.gallery.filer') !!}
+                        {!!$gallery->fileEdit('images')->view('gallery::user.gallery.filer')!!}
                     </div>
                 </div>
-                  {!! Form::hidden('upload_folder')!!}
+                        {!! Form::hidden('upload_folder')!!}
                 <div class="row m-t-40">
                     <div class="col-md-12">
                         <button class="btn btn-sm btn-danger waves-effect waves-float text-uppercase m-r-5 ">Update Images</button>
