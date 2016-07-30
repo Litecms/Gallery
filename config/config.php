@@ -54,7 +54,7 @@ return [
         'slugs'         => ['slug' => 'title'],
         'dates'         => ['deleted_at'],
         'appends'       => [],
-        'fillable'      => ['user_id', 'title', 'image', 'images', 'status', 'upload_folder'],
+        'fillable'      => ['user_id', 'user_type', 'title', 'image', 'images', 'status', 'upload_folder'],
 
         'upload_folder' => '/gallery/gallery',
         'uploads'       => [
