@@ -1,55 +1,38 @@
-Lavalite package that provides gallery management facility for the cms.
+Laravel package that provides content gallery management facility for lavalite CMS.
 
 ## Installation
 
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `litecms/gallery`.
+Require this package with composer. 
 
-    "litecms/gallery": "dev-master"
+    composer require litecms/gallery
 
-Next, update Composer from the Terminal:
-
-    composer update
-
-Once this operation completes execute below cammnds in command line to finalize installation.
-
-    Litecms\Gallery\Providers\GalleryServiceProvider::class,
-
-And also add it to alias
-
-    'Gallery'  => Litecms\Gallery\Facades\Gallery::class,
-
-## Publishing files and migraiting database.
-
-**Migration and seeds**
-
-    php artisan migrate
-    php artisan db:seed --class=Litecms\\GalleryTableSeeder
-
-**Publishing configuration**
-
-    php artisan vendor:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --tag="config"
-
-**Publishing language**
-
-    php artisan vendor:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --tag="lang"
-
-**Publishing views**
-
-    php artisan vendor:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --tag="view"
-
-**Publishing views to theme**
-
-Publishes admin view
-    php artisan theme:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --view=="admin" --theme=="admin"
-
-Publishes client view
-    php artisan theme:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --view=="default" --theme=="client"
-
-Publishes user view
-    php artisan theme:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --view=="default" --theme=="user"
-
-Publishes public view
-    php artisan theme:publish --provider="Litecms\Gallery\Providers\GalleryServiceProvider" --view=="public" --theme=="public"
-## Usage
+Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
 
 
+## Publishing
+
+**Configuration**
+
+    php artisan vendor:publish --provider="Litecms\Gallery\GalleryServiceProvider" --tag="config"
+
+**Language**
+
+    php artisan vendor:publish --provider="Litecms\Gallery\GalleryServiceProvider" --tag="lang"
+
+**Files**
+
+    php artisan vendor:publish --provider="Litecms\Gallery\GalleryServiceProvider" --tag="storage"
+
+### Views
+
+Publish views to resources\views\vendor directory
+
+    php artisan vendor:publish --provider="Litecms\Gallery\GalleryServiceProvider" --tag="view"
+
+Publishes admin view to admin theme
+
+    php artisan theme:publish --provider="Litecms\Gallery\GalleryServiceProvider" --view="admin" --theme="admin"
+
+Publishes public view to public theme
+
+    php artisan theme:publish --provider="Litecms\Gallery\GalleryServiceProvider" --view="public" --theme="public"
