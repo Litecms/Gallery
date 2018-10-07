@@ -57,19 +57,7 @@ class GalleryTableSeeder extends Seeder
             ],
 
             [
-                'parent_id'   => 2,
-                'key'         => null,
-                'url'         => 'user/gallery/gallery',
-                'name'        => 'Gallery',
-                'description' => null,
-                'icon'        => 'icon-book-open',
-                'target'      => null,
-                'order'       => 190,
-                'status'      => 1,
-            ],
-
-            [
-                'parent_id'   => 3,
+                'parent_id'   => 4,
                 'key'         => null,
                 'url'         => 'gallery',
                 'name'        => 'Gallery',
