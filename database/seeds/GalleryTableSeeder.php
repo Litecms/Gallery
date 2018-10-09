@@ -67,6 +67,17 @@ class GalleryTableSeeder extends Seeder
                 'order'       => 190,
                 'status'      => 1,
             ],
+            [
+                'parent_id'   => 5,
+                'key'         => null,
+                'url'         => 'gallery',
+                'name'        => 'Gallery',
+                'description' => null,
+                'icon'        => null,
+                'target'      => null,
+                'order'       => 190,
+                'status'      => 1,
+            ],
 
         ]);
 
