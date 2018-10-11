@@ -48,7 +48,7 @@ class GalleryResourceController extends BaseController
 
         $galleries = $this->repository->paginate();
 
-        return $this->response->title(trans('gallery::gallery.names'))
+        return $this->response->setMetaTitle(trans('gallery::gallery.names'))
             ->view('gallery::gallery.index', true)
             ->data(compact('galleries'))
             ->output();
@@ -71,7 +71,7 @@ class GalleryResourceController extends BaseController
             $view = 'gallery::gallery.new';
         }
 
-        return $this->response->title(trans('app.view') . ' ' . trans('gallery::gallery.name'))
+        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('gallery::gallery.name'))
             ->data(compact('gallery'))
             ->view($view, true)
             ->output();
@@ -88,7 +88,7 @@ class GalleryResourceController extends BaseController
     {
 
         $gallery = $this->repository->newInstance([]);
-        return $this->response->title(trans('app.new') . ' ' . trans('gallery::gallery.name')) 
+        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('gallery::gallery.name')) 
             ->view('gallery::gallery.create', true) 
             ->data(compact('gallery'))
             ->output();
@@ -134,7 +134,7 @@ class GalleryResourceController extends BaseController
      */
     public function edit(GalleryRequest $request, Gallery $gallery)
     {
-        return $this->response->title(trans('app.edit') . ' ' . trans('gallery::gallery.name'))
+        return $this->response->setMetaTitle(trans('app.edit') . ' ' . trans('gallery::gallery.name'))
             ->view('gallery::gallery.edit', true)
             ->data(compact('gallery'))
             ->output();

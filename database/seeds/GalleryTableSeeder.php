@@ -59,7 +59,7 @@ class GalleryTableSeeder extends Seeder
             [
                 'parent_id'   => 4,
                 'key'         => null,
-                'url'         => 'gallery',
+                'url'         => 'galleries',
                 'name'        => 'Gallery',
                 'description' => null,
                 'icon'        => null,
@@ -70,7 +70,7 @@ class GalleryTableSeeder extends Seeder
             [
                 'parent_id'   => 5,
                 'key'         => null,
-                'url'         => 'gallery',
+                'url'         => 'galleries',
                 'name'        => 'Gallery',
                 'description' => null,
                 'icon'        => null,

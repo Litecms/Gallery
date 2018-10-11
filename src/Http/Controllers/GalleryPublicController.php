@@ -38,7 +38,7 @@ class GalleryPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('gallery::gallery.names'))
+        return $this->response->setMetaTitle(trans('gallery::gallery.names'))
             ->view('gallery::public.gallery.index')
             ->data(compact('galleries'))
             ->output();
@@ -60,7 +60,7 @@ class GalleryPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('gallery::gallery.names'))
+        return $this->response->setMetaTitle(trans('gallery::gallery.names'))
             ->view('gallery::public.gallery.index')
             ->data(compact('galleries'))
             ->output();
@@ -80,7 +80,7 @@ class GalleryPublicController extends BaseController
                          ->where('slug', $slug);
         })->first(['*']);
 
-        return $this->response->title(trans('gallery::gallery.name'))
+        return $this->response->setMetaTitle(trans('gallery::gallery.name'))
             ->view('gallery::public.gallery.show')
             ->data(compact('gallery'))
             ->output();
