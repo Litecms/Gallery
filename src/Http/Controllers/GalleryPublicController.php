@@ -39,7 +39,7 @@ class GalleryPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('gallery::gallery.names'))
-            ->view('gallery::public.gallery.index')
+            ->view('gallery::gallery.index')
             ->data(compact('galleries'))
             ->output();
     }
@@ -61,7 +61,7 @@ class GalleryPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('gallery::gallery.names'))
-            ->view('gallery::public.gallery.index')
+            ->view('gallery::gallery.index')
             ->data(compact('galleries'))
             ->output();
     }
@@ -81,7 +81,7 @@ class GalleryPublicController extends BaseController
         })->first(['*']);
 
         return $this->response->setMetaTitle(trans('gallery::gallery.name'))
-            ->view('gallery::public.gallery.show')
+            ->view('gallery::gallery.show')
             ->data(compact('gallery'))
             ->output();
     }

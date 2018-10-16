@@ -1,4 +1,4 @@
-@include('gallery::public.gallery.partial.header')
+@include('gallery::gallery.partial.header')
 <section class="content bg-grey">
                 <div class="container">
                     <div class="gallery">
