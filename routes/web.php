@@ -8,5 +8,5 @@ Route::group(['prefix' => set_route_guard('web').'/gallery'], function () {
 // Public  routes for gallery
 Route::get('gallery/popular/{period?}', 'GalleryPublicController@popular');
 Route::get('galleries/', 'GalleryPublicController@index');
-Route::get('galleries/{slug?}', 'GalleryPublicController@show');
+Route::get('gallery/{slug?}', 'GalleryPublicController@show');
 

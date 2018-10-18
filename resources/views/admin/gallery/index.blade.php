@@ -17,14 +17,8 @@
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                     <li class="{!!(request('status') == '')?'active':'';!!}"><a href="{!!guard_url('gallery/gallery')!!}">{!! trans('gallery::gallery.names') !!}</a></li>
-                    <li class="{!!(request('status') == 'archive')?'active':'';!!}"><a href="{!!guard_url('gallery/gallery?status=archive')!!}">Archived</a></li>
-                    <li class="{!!(request('status') == 'deleted')?'active':'';!!}"><a href="{!!guard_url('gallery/gallery?status=deleted')!!}">Trashed</a></li>
                     <li class="pull-right">
                     <span class="actions">
-                    <!--   
-                    <a  class="btn btn-xs btn-purple"  href="{!!guard_url('gallery/gallery/reports')!!}"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-sm hidden-xs"> Reports</span></a>
-                    @include('gallery::admin.gallery.partial.actions')
-                    -->
                     @include('gallery::admin.gallery.partial.filter')
                     @include('gallery::admin.gallery.partial.column')
                     </span> 
@@ -33,9 +27,8 @@
             <div class="tab-content">
                 <table id="gallery-gallery-list" class="table table-striped data-table">
                     <thead class="list_head">
-                        <th style="text-align: right;" width="1%"><a class="btn-reset-filter" href="#Reset" style="display:none; color:#fff;"><i class="fa fa-filter"></i></a> <input type="checkbox" id="gallery-gallery-check-all"></th>
-                        <th data-field="title">{!! trans('gallery::gallery.label.title')!!}</th>
-                    <th data-field="published">{!! trans('gallery::gallery.label.published')!!}</th>
+                    <th style="text-align: right;" width="1%"><a class="btn-reset-filter" href="#Reset" style="display:none; color:#fff;"><i class="fa fa-filter"></i></a> <input type="checkbox" id="gallery-gallery-check-all"></th>
+                    <th data-field="title">{!! trans('gallery::gallery.label.title')!!}</th>
                     <th data-field="status">{!! trans('gallery::gallery.label.status')!!}</th>
                     </thead>
                 </table>
@@ -85,7 +78,6 @@ $(document).ready(function(){
         "columns": [
             {data :'id'},
             {data :'title'},
-            {data :'published'},
             {data :'status'},
         ],
         "pageLength": 25

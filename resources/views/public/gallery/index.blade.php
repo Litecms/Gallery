@@ -1,32 +1,26 @@
 @include('gallery::gallery.partial.header')
 <section class="content bg-grey">
-                <div class="container">
-                    <div class="gallery">
+    <div class="container">
+        <div class="gallery">
+            <div class="row">
+                <div class="col-md-12">
+                    @foreach($galleries->chunk(3) as $gallery)
                         <div class="row">
-                            <div class="col-md-12">
-                                <ul class="grid work-3col lightbox-gallery">
-                                   <li class="sizer"></li>
-                                    @foreach($galleries as $gallery)
-                                    <li class="item" data-src="{{url($gallery->defaultImage('image'))}}"  data-sub-html="<h4>Armchair Mojo</h4><p>Gallery</p>">
-                                        <a href="{{url($gallery->defaultImage('image'))}}" title="Armchair Mojo">
-                                            <figure>
-                                                <div class="img"><img src="{{url($gallery->defaultImage('image'))}}" alt="" class="project-img-gallery"/></div>
-                                                <figcaption>
-                                                    <div class="hover-main text-center">
-                                                        <div class="box">
-                                                            <div class="content">
-                                                                <i class="ti-zoom-in"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </figcaption>
-                                            </figure>
-                                        </a>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </div>
+                           @foreach($gallery as $image)
+                           <div class="col-md-4 portfolio-image">
+                              <a href="{{trans_url('gallery/'.$image->slug)}}">
+                              <img class="img-responsive" src="{{url($image->defaultImage('images', 'lg'))}}" alt="">
+                              </a>
+                              <h3>
+                                 <a href="{{trans_url('gallery/'.$image->slug)}}">{{ $image->title }}</a>
+                              </h3>
+                              <p>{{ str_limit($image->details, 121) }}...</p>
+                           </div>
+                           @endforeach
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            </section>
+            </div>
+        </div>
+    </div>
+</section>

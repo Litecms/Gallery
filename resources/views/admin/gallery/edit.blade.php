@@ -15,7 +15,7 @@
         ->action(guard_url('gallery/gallery/'. $gallery->getRouteKey()))!!}
         <div class="tab-content clearfix">
             <div class="tab-pane active" id="gallery">
-                <div class="tab-pan-title">  {{ trans('app.edit') }}  {!! trans('gallery::gallery.name') !!} [{!!$gallery->name!!}] </div>
+                <div class="tab-pan-title">  {{ trans('app.edit') }}  {!! trans('gallery::gallery.name') !!} [{!!$gallery->title!!}] </div>
                 @include('gallery::admin.gallery.partial.entry', ['mode' => 'edit'])
             </div>
         </div>

@@ -18,7 +18,7 @@
         ->files('true')
         ->action(guard_url('gallery/gallery'))!!}
             <div class="tab-content clearfix disabled">
-                <div class="tab-pan-title"> {{ trans('app.view') }}   {!! trans('gallery::gallery.name') !!}  [{!! $gallery->name !!}] </div>
+                <div class="tab-pan-title"> {{ trans('app.view') }}   {!! trans('gallery::gallery.name') !!}  [{!! $gallery->title !!}] </div>
                 <div class="tab-pane active" id="details">
                     @include('gallery::admin.gallery.partial.entry', ['mode' => 'show'])
                 </div>
